@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export function LoginForm({ onLogin }: { onLogin: () => void }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,12 +14,11 @@ export function LoginForm({ onLogin }: { onLogin: () => void }) {
       <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
         <div className="flex justify-center mb-8">
           <img 
-            src="/datasulting-logo.svg" 
+            src="/public/logo couleur_pixel dessus_print.png" 
             alt="Datasulting" 
-            className="w-32 h-32"
+            className="w-90 h-32"
           />
         </div>
-        <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Bienvenue</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">

@@ -5,11 +5,23 @@ import { ChatInterface } from './components/ChatInterface';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  if (!isLoggedIn) {
-    return <LoginForm onLogin={() => setIsLoggedIn(true)} />;
-  }
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
 
-  return <ChatInterface />;
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  return (
+    <div>
+      {isLoggedIn ? (
+        <ChatInterface onLogout={handleLogout} />
+      ) : (
+        <LoginForm onLogin={handleLogin} />
+      )}
+    </div>
+  );
 }
 
 export default App;
